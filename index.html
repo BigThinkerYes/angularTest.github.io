@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="chooseLanguage">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <title>AngularJS | MVC (model-view-controller)</title>
+</head>
+<body>
+   <div data-ng-controller="languages">
+     Select Your Favorite language:
+     <button data-ng-click="php()">PHP</button>
+     <button data-ng-click="javaScript()">JavaScript</button>
+     <button data-ng-click="cpp()">C++</button>
+     <button data-ng-click="java()">JAVA</button>
+
+     <p>You have selected: {{ myFavLanguage }}</p>
+   </div>
+
+   <!--create a controller-->
+   <script>
+     var application = angular.module('chooseLanguage', []);
+     //define controller
+     application.controller('languages', function($scope){
+        $scope.myFavLanguage ='None';
+     
+            //define button
+            $scope.php = function(){
+              $scope.myFavLanguage = 'PHP';
+            };
+
+            $scope.javaScript = function(){
+              $scope.myFavLanguage = 'javaScript';
+            };
+
+            $scope.cpp= function(){
+              $scope.myFavLanguage = 'C++';
+            };
+
+            $scope.java = function(){
+              $scope.myFavLanguage = 'JAVA';
+            };
+
+     });
+   </script>
+</body>
+</html>
